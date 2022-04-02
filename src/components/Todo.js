@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import "./Todo.css";
 
-const Todo = ({ item, handleDelItem, handleTitleChange }) => {
-  const [text, setText] = useState(item.title);
+const Todo = ({ item, handleDelItem, handleTextChange }) => {
+  const [title, setTitle] = useState(item.title);
+  const [description, setDescription] = useState(item.description);
 
   const deleteHandler = () => {
     handleDelItem(item.id);
   };
 
-  const textChangeHandler = (event) => {
-    // implement wait for 1/2-1 second before setting the text
-    handleTitleChange(item.id, event.target.value);
-    setText(event.target.value);
-  };
-
-  const textDeleteHandler = () => {
-    setText("");
+  const textChangeHandler = (event, text) => {
+    handleTextChange(item.id, event.target.value, text);
+    text === "title"
+      ? setTitle(event.target.value)
+      : setDescription(event.target.value);
   };
 
   return (
@@ -24,11 +22,15 @@ const Todo = ({ item, handleDelItem, handleTitleChange }) => {
         <textarea
           className="card__title"
           type="text"
-          value={text}
-          onChange={textChangeHandler}
-          onClick={textDeleteHandler}
+          value={title}
+          onChange={(e) => textChangeHandler(e, "title")}
         />
-        <p className="card__description">{item.description}</p>
+        <textarea
+          className="card__description"
+          type="text"
+          value={description}
+          onChange={(e) => textChangeHandler(e, "description")}
+        />
       </div>
       <div className="actions">
         <button onClick={deleteHandler} className="btn card__btn">

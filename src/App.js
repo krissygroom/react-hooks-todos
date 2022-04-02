@@ -35,10 +35,11 @@ const App = () => {
     setList(newList);
   };
 
-  const handleTitleChange = (id, newTitle) => {
-    console.log("changed title");
+  const handleTextChange = (id, newText, text) => {
     const itemIndex = findIdx(id);
-    list[itemIndex].title = newTitle;
+    text === "title"
+      ? (list[itemIndex].title = newText)
+      : (list[itemIndex].description = newText);
   };
 
   /*
@@ -63,7 +64,7 @@ const App = () => {
               key={item.id}
               item={item}
               handleDelItem={handleDelItem}
-              handleTitleChange={handleTitleChange}
+              handleTextChange={handleTextChange}
             />
           );
         })}
