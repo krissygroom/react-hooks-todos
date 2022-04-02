@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  margin-right: 0.75rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icon {
+  height: 2.5rem;
+  width: 2.5rem;
+  color: #29347a;
+  transform: rotate(285deg);
+  padding: 0;
+  margin: 0;
+}
