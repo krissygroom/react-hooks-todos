@@ -2,42 +2,6 @@ h2 {
   font-size: 1.2rem;
 }
 
-.btn,
-.btn:active,
-.btn:visited {
-  font: inherit;
-  font-weight: 600;
-  padding: 0.5rem 1.5rem;
-  cursor: pointer;
-  border-radius: 100px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(149, 204, 244) 0,
-    rgb(128, 155, 243) 40%
-  );
-  color: white;
-  border: none;
-
-  transition: all 0.2s;
-}
-
-.btn:hover,
-.btn:focus {
-  filter: brightness(1.05);
-  border: none;
-  outline-color: #e9e5f4;
-}
-
-.btn--alt {
-  background-color: transparent;
-  color: #809bf3;
-}
-
-.btn--alt:hover {
-  filter: brightness(1.05);
-}
-
 .card {
   background-color: white;
   border-radius: 15px;
@@ -58,7 +22,6 @@ h2 {
   border: none;
   width: 100%;
   color: inherit;
-  /* line-height: 1.2; */
   outline: none;
   resize: none;
 }
@@ -68,6 +31,7 @@ h2 {
   font-family: "BIZ UDPMincho", serif;
   border-bottom: 1px solid rgb(84, 92, 132, 0.3);
   font-size: 1.2rem;
+  height: 2.8rem;
 }
 
 .card__description,
@@ -78,7 +42,8 @@ h2 {
 
 .card__description {
   font-style: italic;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
+  height: 6rem;
 }
 
 .card__btn {

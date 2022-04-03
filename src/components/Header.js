@@ -3,14 +3,14 @@ import { PencilIcon } from "@heroicons/react/outline";
 import Search from "./Search";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ onChange }) => {
   return (
     <div className="header">
       <div className="title">
         <h1>My Todos</h1>
         <PencilIcon className="h-5 w-5 icon icon-pencil" />
       </div>
-      <Search />
+      <Search onChange={onChange} />
     </div>
   );
 };

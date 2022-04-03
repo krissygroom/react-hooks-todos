@@ -1,18 +1,32 @@
 import React, { useState, useEffect } from "react";
+import Modal from "./Modal";
+import Backdrop from "./Backdrop";
 import "./Todo.css";
+import "./btn.css";
 
 const Todo = ({ item, handleDelItem, handleTextChange }) => {
   const [title, setTitle] = useState(item.title);
   const [description, setDescription] = useState(item.description);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const deleteHandler = () => {
+    setModalIsOpen(true);
+    // handleDelItem(item.id);
+  };
+
+  const confirmDelHandler = () => {
     handleDelItem(item.id);
+    closeModalHandler();
   };
 
   const textChangeHandler = (event, text) => {
     text === "title"
       ? setTitle(event.target.value)
       : setDescription(event.target.value);
+  };
+
+  const closeModalHandler = () => {
+    setModalIsOpen(false);
   };
 
   useEffect(() => {
@@ -59,10 +73,14 @@ const Todo = ({ item, handleDelItem, handleTextChange }) => {
         />
       </div>
       <div className="actions">
-        <button onClick={deleteHandler} className="btn card__btn">
+        <button onClick={deleteHandler} className="btn btn--main card__btn">
           Delete
         </button>
       </div>
+      {modalIsOpen && (
+        <Modal onCancel={closeModalHandler} onConfirm={confirmDelHandler} />
+      )}
+      {modalIsOpen && <Backdrop onClick={closeModalHandler} />}
     </div>
   );
 };
