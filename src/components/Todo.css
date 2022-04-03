@@ -36,7 +36,8 @@ h2 {
   font-family: "BIZ UDPMincho", serif;
   border-bottom: 1px solid rgb(84, 92, 132, 0.3);
   font-size: 1.2rem;
-  height: 2.8rem;
+  line-height: 1.2;
+  height: 3rem;
 }
 
 .card__description,
