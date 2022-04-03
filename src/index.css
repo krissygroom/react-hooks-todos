@@ -46,3 +46,31 @@ h1 {
   font-family: "BIZ UDPMincho", serif;
   font-size: 2.6rem;
 }
+
+/* Media Queries */
+@media screen and (max-width: 800px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  body {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+  body {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  body {
+    padding: 1rem;
+  }
+}

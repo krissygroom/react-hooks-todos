@@ -17,4 +17,12 @@
 
 .icon.icon-plus:hover {
   filter: brightness(1.2);
+  color: rgba(109, 115, 154, 0.735);
+}
+
+@media screen and (max-width: 650px) {
+  .add-note {
+    width: 100%;
+    margin: 1rem 0;
+  }
 }

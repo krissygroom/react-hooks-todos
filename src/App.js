@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Todo from "./components/Todo";
 import Header from "./components/Header";
 import AddNote from "./components/AddNote";
@@ -64,20 +64,21 @@ const App = () => {
       description: "",
     };
 
-    const newList = [...list, newNote];
+    const newList = [newNote, ...list];
     setList(newList);
   };
 
-  /*
-  TODO: 
-  1. add new note button and handle click event button
-  2. Add 'lifecycle methods' to save to local storage on exit and read from local storage on load
-  extras:
-  1. group by functionality - based on maybe importance and date
-  2. add importance rating: low, medium, high with color tags #F5628B, #F2CD68, #74F284
-  3. Sort todo list
+  // Lifecycle methods
+  useEffect(() => {
+    const ourList = JSON.parse(localStorage.getItem("list"));
+    if (ourList) {
+      setList(ourList);
+    }
+  }, []);
 
-  */
+  useEffect(() => {
+    localStorage.setItem("list", JSON.stringify(list));
+  }, [list]);
 
   return (
     <div className="main-container">

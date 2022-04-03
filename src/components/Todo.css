@@ -26,6 +26,11 @@ h2 {
   resize: none;
 }
 
+.card__title::placeholder,
+.card__description::placeholder {
+  color: rgb(41, 52, 122, 0.5);
+}
+
 .card__title,
 .card__title:focus {
   font-family: "BIZ UDPMincho", serif;
