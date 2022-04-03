@@ -12,4 +12,9 @@
   height: 2rem;
   width: 2rem;
   margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.icon.icon-plus:hover {
+  filter: brightness(1.2);
 }

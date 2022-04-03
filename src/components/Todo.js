@@ -63,12 +63,14 @@ const Todo = ({ item, handleDelItem, handleTextChange }) => {
           className="card__title"
           type="text"
           value={title}
+          placeHolder="Title"
           onChange={(e) => textChangeHandler(e, "title")}
         />
         <textarea
           className="card__description"
           type="text"
           value={description}
+          placeHolder="Description"
           onChange={(e) => textChangeHandler(e, "description")}
         />
       </div>

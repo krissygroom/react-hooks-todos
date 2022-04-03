@@ -82,7 +82,7 @@ const App = () => {
   return (
     <div className="main-container">
       <Header onChange={handleListChange} />
-      <AddNote />
+      <AddNote onClick={handleNewNote} />
       <div className="cards-container">
         {filteredList().map((item) => {
           return (
