@@ -21,3 +21,28 @@
   justify-content: center;
   gap: 1rem;
 }
+
+@media screen and (max-width: 650px) {
+  .modal {
+    width: 80%;
+    top: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .modal {
+    width: 90%;
+  }
+
+  .modal__btns {
+    gap: 0.5rem;
+  }
+
+  .modal__btn {
+    width: 5.5rem;
+    display: flex;
+    justify-content: center;
+  }
+}

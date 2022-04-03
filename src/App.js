@@ -80,6 +80,14 @@ const App = () => {
     localStorage.setItem("list", JSON.stringify(list));
   }, [list]);
 
+  /*
+TODO: 
+1. Add readme
+2. media queries for modal
+3. deploy to github pages
+4. add to my portfolio!
+ */
+
   return (
     <div className="main-container">
       <Header onChange={handleListChange} />
