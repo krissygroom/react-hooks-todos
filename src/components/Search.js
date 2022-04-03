@@ -11,7 +11,7 @@ const Search = ({ onChange }) => {
           onChange={onChange}
           className="search__input"
           type="text"
-          placeholder="Search notes"
+          placeholder="Search notes..."
         />
         <SearchIcon className="h-5 w-5 search__icon" />
       </div>

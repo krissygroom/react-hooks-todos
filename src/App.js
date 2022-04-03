@@ -3,29 +3,9 @@ import Todo from "./components/Todo";
 import Header from "./components/Header";
 import AddNote from "./components/AddNote";
 
-const todoList = [
-  {
-    id: "123",
-    title: "Learn React",
-    description: "Spend an hour per day studying!",
-  },
-  { id: "345", title: "Learn NextJS", description: "Finish Max's class" },
-  {
-    id: "567",
-    title: "Learn GraphQL",
-    description: "Start a project to learn more fully",
-  },
-  {
-    id: "789",
-    title: "Spend time with jay!",
-    description: "Watch some shows and go on errands together today!",
-  },
-];
-
 const App = () => {
-  const [list, setList] = useState(todoList);
+  const [list, setList] = useState([]);
   const [search, setSearch] = useState("");
-  const [text, setText] = useState("");
 
   const findIdx = (itemId) => {
     return list.findIndex((item) => item.id === itemId);
@@ -38,13 +18,14 @@ const App = () => {
     setList(newList);
   };
 
-  const handleTextChange = (id, newText, text) => {
+  const handleTextChange = (id, newText, textType) => {
     const itemIndex = findIdx(id);
-    text === "title"
-      ? (list[itemIndex].title = newText)
-      : (list[itemIndex].description = newText);
+    const newList = [...list];
+    textType === "title"
+      ? (newList[itemIndex].title = newText)
+      : (newList[itemIndex].description = newText);
 
-    setText(newText);
+    setList(newList);
   };
 
   const handleListChange = (e) => {
@@ -66,12 +47,12 @@ const App = () => {
       title: "",
       description: "",
     };
-
     const newList = [newNote, ...list];
     setList(newList);
   };
 
   // Lifecycle methods
+
   useEffect(() => {
     const ourList = JSON.parse(localStorage.getItem("list"));
     if (ourList) {
@@ -81,15 +62,7 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
-  }, [list, text]);
-
-  /*
-TODO: 
-1. Add readme
-2. media queries for modal
-3. deploy to github pages
-4. add to my portfolio!
- */
+  }, [list]);
 
   return (
     <div className="main-container">
