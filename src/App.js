@@ -25,6 +25,7 @@ const todoList = [
 const App = () => {
   const [list, setList] = useState(todoList);
   const [search, setSearch] = useState("");
+  const [text, setText] = useState("");
 
   const findIdx = (itemId) => {
     return list.findIndex((item) => item.id === itemId);
@@ -42,6 +43,8 @@ const App = () => {
     text === "title"
       ? (list[itemIndex].title = newText)
       : (list[itemIndex].description = newText);
+
+    setText(newText);
   };
 
   const handleListChange = (e) => {
@@ -78,7 +81,7 @@ const App = () => {
 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));
-  }, [list]);
+  }, [list, text]);
 
   /*
 TODO: 

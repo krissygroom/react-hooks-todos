@@ -11,7 +11,6 @@ const Todo = ({ item, handleDelItem, handleTextChange }) => {
 
   const deleteHandler = () => {
     setModalIsOpen(true);
-    // handleDelItem(item.id);
   };
 
   const confirmDelHandler = () => {
@@ -32,7 +31,7 @@ const Todo = ({ item, handleDelItem, handleTextChange }) => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       // only run handle input change in parent after a pause of half a second
-      if (title) {
+      if (title || title === "") {
         handleTextChange(item.id, title, "title");
       }
     }, 500);
@@ -46,7 +45,7 @@ const Todo = ({ item, handleDelItem, handleTextChange }) => {
   // Question: does cleanup function only work in useEffect? b/c if I extract repeated code into new function, timeout doesn't work as expected.
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      if (description) {
+      if (description || description === "") {
         handleTextChange(item.id, description, "description");
       }
     }, 500);
