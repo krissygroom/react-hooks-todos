@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Todo from "./components/Todo";
 import Header from "./components/Header";
+import AddNote from "./components/AddNote";
 
 const todoList = [
   {
@@ -56,6 +57,17 @@ const App = () => {
     });
   };
 
+  const handleNewNote = () => {
+    const newNote = {
+      id: Date.now(),
+      title: "",
+      description: "",
+    };
+
+    const newList = [...list, newNote];
+    setList(newList);
+  };
+
   /*
   TODO: 
   1. add new note button and handle click event button
@@ -70,6 +82,7 @@ const App = () => {
   return (
     <div className="main-container">
       <Header onChange={handleListChange} />
+      <AddNote />
       <div className="cards-container">
         {filteredList().map((item) => {
           return (

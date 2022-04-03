@@ -1,0 +1,15 @@
+.add-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+}
+
+.icon.icon-plus {
+  color: rgba(233, 229, 244, 0.9);
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  margin-bottom: 1rem;
+}
