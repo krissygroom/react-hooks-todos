@@ -7,7 +7,7 @@ const Header = ({ onChange }) => {
   return (
     <div className="header">
       <div className="title">
-        <h1>My Todos</h1>
+        <h1>My Notes</h1>
         <PencilIcon className="h-5 w-5 icon icon-pencil" />
       </div>
       <Search onChange={onChange} />

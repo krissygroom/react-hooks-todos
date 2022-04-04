@@ -52,7 +52,6 @@ const App = () => {
   };
 
   // Lifecycle methods
-
   useEffect(() => {
     const ourList = JSON.parse(localStorage.getItem("list"));
     if (ourList) {
