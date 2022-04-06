@@ -31,6 +31,10 @@ h2 {
   color: rgb(41, 52, 122, 0.5);
 }
 
+.card__top {
+  position: relative;
+}
+
 .card__title,
 .card__title:focus {
   font-family: "BIZ UDPMincho", serif;
@@ -38,6 +42,7 @@ h2 {
   font-size: 1.2rem;
   line-height: 1.2;
   height: 3rem;
+  padding-left: 2rem;
 }
 
 .card__description,

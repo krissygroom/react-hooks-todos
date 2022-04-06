@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./Modal";
 import Backdrop from "./Backdrop";
+import Checkbox from "./Checkbox";
 import "./Todo.css";
 import "./btn.css";
 
@@ -8,6 +9,7 @@ const Todo = ({ item, handleDelItem, handleTextChange }) => {
   const [title, setTitle] = useState(item.title);
   const [description, setDescription] = useState(item.description);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   const deleteHandler = () => {
     setModalIsOpen(true);
@@ -58,13 +60,24 @@ const Todo = ({ item, handleDelItem, handleTextChange }) => {
   return (
     <div className="card">
       <div>
-        <textarea
-          className="card__title"
-          type="text"
-          value={title}
-          placeholder="Title"
-          onChange={(e) => textChangeHandler(e, "title")}
-        />
+        <div className="card__top">
+          <label>
+            <Checkbox
+              className="checkbox"
+              checked={isChecked}
+              onChange={() =>
+                isChecked === true ? setIsChecked(false) : setIsChecked(true)
+              }
+            />
+          </label>
+          <textarea
+            className="card__title"
+            type="text"
+            value={title}
+            placeholder="Title"
+            onChange={(e) => textChangeHandler(e, "title")}
+          />
+        </div>
         <textarea
           className="card__description"
           type="text"

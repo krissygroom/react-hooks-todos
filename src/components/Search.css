@@ -30,12 +30,8 @@
 }
 
 .search__input:focus {
-  transform: scaleX(1.05);
   background-color: rgba(233, 229, 244, 0.4);
-}
-
-.search__input:focus + .search__icon {
-  transform: translateX(-5px);
+  box-shadow: 0 0 0 4px rgba(233, 229, 244, 0.7);
 }
 
 .search__icon {
